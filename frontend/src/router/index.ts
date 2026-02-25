@@ -12,12 +12,15 @@ const routes = [
       }
     ]
   },
-  // Grupo 2: Rutas de la Aplicación (Con Header/Footer)
   {
     path: '/',
     component: () => import('@/layouts/MainLayout.vue'),
-    redirect: '/dashboard', // Si entran a "/", los mandamos al dashboard
     children: [
+      { 
+        path: '',
+        name: 'Home', 
+        component: () => import('@/pages/LandingPage.vue') 
+      },
       { 
         path: 'dashboard', 
         name: 'Dashboard', 
@@ -34,7 +37,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes, // Aquí es donde le pasamos el array de rutas que definimos arriba
+  routes,
 })
 
 export default router
