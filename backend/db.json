@@ -1,0 +1,67 @@
+{
+  "medications": [
+    {
+      "id": 1,
+      "name": "Amoxil",
+      "brand": "GSK",
+      "activeIngredient": "Amoxicillin",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": 2,
+      "name": "Varidasa",
+      "brand": "Sanofi",
+      "activeIngredient": "Streptokinase/Streptodornase",
+      "dosage": "10mg",
+      "category": "Anti-inflammatory"
+    },
+    {
+      "id": 3,
+      "name": "Advil",
+      "brand": "Pfizer",
+      "activeIngredient": "Ibuprofen",
+      "dosage": "400mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": 4,
+      "name": "Nolotil",
+      "brand": "Boehringer",
+      "activeIngredient": "Metamizole",
+      "dosage": "575mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": 5,
+      "name": "Zitromax",
+      "brand": "Pfizer",
+      "activeIngredient": "Azithromycin",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    }
+  ],
+  "inventory": [
+    {
+      "id": 1,
+      "medicationId": 1,
+      "batchNumber": "BAT-AMX-001",
+      "expiryDate": "2026-05-20",
+      "stock": 150
+    },
+    {
+      "id": 2,
+      "medicationId": 2,
+      "batchNumber": "BAT-VAR-992",
+      "expiryDate": "2024-12-15",
+      "stock": 45
+    },
+    {
+      "id": 3,
+      "medicationId": 3,
+      "batchNumber": "BAT-ADV-441",
+      "expiryDate": "2025-08-10",
+      "stock": 12
+    }
+  ]
+}
