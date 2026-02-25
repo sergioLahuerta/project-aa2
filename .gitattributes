@@ -1,0 +1,3 @@
+# LF para Linux con los saltos de linesa
+* text=auto eol=lf
+*.{js,ts,vue,json,html,css,scss} text eol=lf
