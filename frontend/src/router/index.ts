@@ -13,26 +13,26 @@ const routes = [
     ]
   },
   {
-    path: '/',
-    component: () => import('@/layouts/MainLayout.vue'),
-    children: [
-      { 
-        path: '',
-        name: 'Home', 
-        component: () => import('@/pages/LandingPage.vue') 
-      },
-      { 
-        path: 'dashboard', 
-        name: 'Dashboard', 
-        component: () => import('@/pages/DashboardPage.vue') 
-      },
-      { 
-        path: 'inventory', 
-        name: 'Inventory', 
-        component: () => import('@/pages/InventoryPage.vue') 
-      }
-    ]
-  }
+  path: '/',
+  component: () => import('@/layouts/MainLayout.vue'),
+  children: [
+    { 
+      path: '', // La raíz ahora es la Landing
+      name: 'Home', 
+      component: () => import('@/pages/LandingPage.vue') 
+    },
+    {   
+      path: 'dashboard', 
+      name: 'Dashboard', 
+      component: () => import('@/pages/DashboardPage.vue') 
+    },
+    { 
+      path: 'inventory', 
+      name: 'Inventory', 
+      component: () => import('@/pages/InventoryPage.vue') 
+    }
+  ]
+}
 ]
 
 const router = createRouter({
