@@ -7,6 +7,9 @@ export const useMedicationStore = defineStore('medication', () => {
   const medications = ref<Medication[]>([])
   const loading = ref(false)
   const error = ref<string | null>(null)
+  const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL
+  })
 
   // Para las kpis
   const totalMedications = computed(() => medications.value.length)
@@ -21,7 +24,7 @@ export const useMedicationStore = defineStore('medication', () => {
   async function fetchMedications() {
     loading.value = true
     try {
-      const response = await axios.get('http://localhost:3000/medications')
+      const response = await api.get('/medications')
       medications.value = response.data
     } catch (err) {
       error.value = 'Error fetching medications'
@@ -31,12 +34,43 @@ export const useMedicationStore = defineStore('medication', () => {
     }
   }
 
-  return { 
-    medications, 
-    loading, 
-    error, 
-    totalMedications, 
-    categoriesCount, 
-    fetchMedications 
+  async function addMedication(newMed: any) {
+    try {
+      const response = await api.post('/medications', newMed)
+      medications.value.push(response.data);
+    } catch (err) {
+      console.error("Error al guardar:", err);
+    }
+  }
+
+  async function updateMedication(id: number, updatedMed: any) {
+    try {
+      await api.put(`/medications/${id}`, updatedMed)
+      const index = medications.value.findIndex(m => m.id === id);
+      if (index !== -1) medications.value[index] = { ...updatedMed, id };
+    } catch (err) {
+      console.error('Error updating medication:', err);
+    }
+  }
+
+  async function deleteMedication(id: number) {
+    try {
+      await api.delete(`/medications/${id}`)
+      medications.value = medications.value.filter(m => m.id !== id);
+    } catch (err) {
+      console.error('Error deleting medication:', err);
+    }
+  }
+
+  return {
+    medications,
+    loading,
+    error,
+    totalMedications,
+    categoriesCount,
+    fetchMedications,
+    addMedication,
+    updateMedication,
+    deleteMedication
   }
 })
