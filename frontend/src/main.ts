@@ -1,23 +1,16 @@
-/**
- * main.ts
- *
- * Bootstraps Vuetify and other plugins then mounts the App`
- */
-
-// Composables
+// src/main.ts
 import { createApp } from 'vue'
-
-// Plugins
-import { registerPlugins } from '@/plugins'
-
-// Components
+import { createPinia } from 'pinia' // Asegúrate de tenerlo
 import App from './App.vue'
-
-// Styles
-import 'unfonts.css'
+import vuetify from './plugins/vuetify' // O la ruta que uses
+import router from './router'
+import i18n from './i18n/vue-i18n' // Tu archivo de configuración
 
 const app = createApp(App)
 
-registerPlugins(app)
+app.use(createPinia()) // Obligatorio para los stores
+app.use(router)
+app.use(vuetify)
+app.use(i18n) // Activa las traducciones globales
 
 app.mount('#app')

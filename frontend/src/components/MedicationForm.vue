@@ -26,22 +26,33 @@
               variant="outlined"
             ></v-text-field>
           </v-col>
+          </v-row>
 
+          <v-row>
           <v-col cols="12">
             <v-select
               v-model="category"
               label="Category"
-              :items="['Antibiotic', 'Analgesic', 'Anti-inflammatory', 'Statin', 'Other']"
+              :items="categories"
               :error-messages="errors.category"
               variant="outlined"
             ></v-select>
           </v-col>
 
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <v-text-field
               v-model="activeIngredient"
               label="Active Ingredient"
               :error-messages="errors.activeIngredient"
+              variant="outlined"
+            ></v-text-field>
+          </v-col>
+
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="dosage"
+              label="Dosage (e.g. 500mg)"
+              :error-messages="errors.dosage"
               variant="outlined"
             ></v-text-field>
           </v-col>
@@ -72,7 +83,19 @@ const emit = defineEmits(['update:modelValue', 'save']);
 const show = ref(props.modelValue);
 const isEditing = ref(false);
 
-watch(() => props.modelValue, (val) => show.value = val);
+
+watch(() => props.modelValue, (isOpen) => {
+  show.value = isOpen;
+  
+  if (isOpen && props.initialData) {
+    isEditing.value = true;
+    setValues(props.initialData);
+  } else if (isOpen) {
+    isEditing.value = false;
+    resetForm();
+  }
+});
+
 watch(show, (val) => emit('update:modelValue', val));
 
 const schema = yup.object({
@@ -80,9 +103,10 @@ const schema = yup.object({
   brand: yup.string().required('Brand is required'),
   category: yup.string().required('Select a category'),
   activeIngredient: yup.string().required('Active ingredient is required'),
+  dosage: yup.string().required('Dosage is required'),
 });
 
-const { handleSubmit, errors, resetForm } = useForm({
+const { handleSubmit, errors, resetForm, setValues } = useForm({
   validationSchema: schema,
 });
 
@@ -90,6 +114,15 @@ const { value: name } = useField<string>('name');
 const { value: brand } = useField<string>('brand');
 const { value: category } = useField<string>('category');
 const { value: activeIngredient } = useField<string>('activeIngredient');
+const { value: dosage } = useField<string>('dosage');
+
+const categories = [
+  'Analgesic', 'Antacid', 'Antiasthmatic', 'Antibiotic', 'Anticoagulant','Anticonvulsant', 
+  'Antidepressant', 'Antiemetic', 'Antidiabetic', 'Antifungal', 'Antigout', 'Antihistamine',
+  'Antihypertensive', 'Antimigraine', 'Antiplatelet', 'Antiviral', 'Anti-inflammatory', 
+  'Anxiolytic', 'Beta-blocker', 'Bronchodilator', 'Corticosteroid', 'Dermatological',
+  'Diuretic', 'Hormone', 'Hypnotic', 'Muscle Relaxant', 'Osteoporosis', 'Statin', 'Supplement', 'Urological'
+];
 
 const onSubmit = handleSubmit(values => {
   emit('save', values);

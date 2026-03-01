@@ -1,11 +1,12 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { api } from '@/services/api'
+import axios from 'axios'
 import { useMedicationStore } from './medicationStore'
+import { useAuthStore } from '@/stores/authStore'
 
 export interface InventoryItem {
-  id: number
-  medicationId: number
+  id: string | number
+  medicationId: string | number
   batchNumber: string
   expiryDate: string
   stock: number
@@ -15,6 +16,18 @@ export const useInventoryStore = defineStore('inventory', () => {
   const items = ref<InventoryItem[]>([])
   const loading = ref(false)
   const error = ref<string | null>(null)
+  const authStore = useAuthStore()
+
+  const api = axios.create({
+    baseURL: 'http://localhost:5126/api'
+  })
+
+  api.interceptors.request.use((config) => {
+    if (authStore.token) {
+      config.headers.Authorization = `Bearer ${authStore.token}`
+    }
+    return config
+  })
 
   async function fetchInventory() {
     loading.value = true
@@ -37,7 +50,20 @@ export const useInventoryStore = defineStore('inventory', () => {
     }
   }
 
-  async function deleteItem(id: number) {
+  async function updateItem(id: string | number, updatedData: Partial<InventoryItem>) {
+    try {
+      const { data } = await api.put<InventoryItem>(`/inventory/${id}`, updatedData);
+      const index = items.value.findIndex(i => String(i.id) === String(id));
+
+      if (index !== -1) {
+        items.value[index] = { ...items.value[index], ...data };
+      }
+    } catch (err: any) {
+      error.value = err.message || 'Error updating item';
+    }
+  }
+
+  async function deleteItem(id: string | number) {
     try {
       await api.delete(`/inventory/${id}`)
       items.value = items.value.filter(i => i.id !== id)
@@ -48,12 +74,9 @@ export const useInventoryStore = defineStore('inventory', () => {
 
   const inventoryWithNames = computed(() => {
     const medStore = useMedicationStore()
-
     return items.value.map(item => ({
       ...item,
-      medName:
-        medStore.medications.find(m => m.id === item.medicationId)?.name ||
-        'Unknown'
+      medName: medStore.medications.find(m => String(m.id) === String(item.medicationId))?.name || 'Unknown'
     }))
   })
 
@@ -63,6 +86,7 @@ export const useInventoryStore = defineStore('inventory', () => {
     error,
     fetchInventory,
     addItem,
+    updateItem,
     deleteItem,
     inventoryWithNames
   }

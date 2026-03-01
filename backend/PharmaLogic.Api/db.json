@@ -1,0 +1,891 @@
+{
+
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@test.com",
+      "password": "123456",
+      "name": "Admin PharmaLogic"
+    },
+    {
+      "id": 2,
+      "email": "admin2@test.com",
+      "password": "654321",
+      "name": "Admin2 PharmaLogic"
+    }
+  ],
+  "medications": [
+    {
+      "id": "1",
+      "name": "Amoxil",
+      "brand": "GSK",
+      "activeIngredient": "Amoxicillin",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "2",
+      "name": "Varidasa",
+      "brand": "Sanofi",
+      "activeIngredient": "Streptokinase/Streptodornase",
+      "dosage": "10mg",
+      "category": "Anti-inflammatory"
+    },
+    {
+      "id": "3",
+      "name": "Advil",
+      "brand": "Pfizer",
+      "activeIngredient": "Ibuprofen",
+      "dosage": "400mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": "4",
+      "name": "Nolotil",
+      "brand": "Boehringer",
+      "activeIngredient": "Metamizole",
+      "dosage": "575mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": "5",
+      "name": "Zitromax",
+      "brand": "Pfizer",
+      "activeIngredient": "Azithromycin",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "6",
+      "name": "Augmentin",
+      "brand": "GSK",
+      "activeIngredient": "Amoxicillin/Clavulanate",
+      "dosage": "875/125mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "7",
+      "name": "Paracetamol",
+      "brand": "Generic",
+      "activeIngredient": "Acetaminophen",
+      "dosage": "1g",
+      "category": "Analgesic"
+    },
+    {
+      "id": "8",
+      "name": "Claritin",
+      "brand": "Bayer",
+      "activeIngredient": "Loratadine",
+      "dosage": "10mg",
+      "category": "Antihistamine"
+    },
+    {
+      "id": "9",
+      "name": "Zyrtec",
+      "brand": "McNeil",
+      "activeIngredient": "Cetirizine",
+      "dosage": "10mg",
+      "category": "Antihistamine"
+    },
+    {
+      "id": "10",
+      "name": "Lipitor",
+      "brand": "Pfizer",
+      "activeIngredient": "Atorvastatin",
+      "dosage": "20mg",
+      "category": "Statin"
+    },
+    {
+      "id": "11",
+      "name": "Nexium",
+      "brand": "AstraZeneca",
+      "activeIngredient": "Esomeprazole",
+      "dosage": "40mg",
+      "category": "Antacid"
+    },
+    {
+      "id": "12",
+      "name": "Ventolin",
+      "brand": "GSK",
+      "activeIngredient": "Salbutamol",
+      "dosage": "100mcg",
+      "category": "Bronchodilator"
+    },
+    {
+      "id": "13",
+      "name": "Metformin",
+      "brand": "Merck",
+      "activeIngredient": "Metformin Hydrochloride",
+      "dosage": "850mg",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "14",
+      "name": "Lexapro",
+      "brand": "Lundbeck",
+      "activeIngredient": "Escitalopram",
+      "dosage": "10mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "15",
+      "name": "Xanax",
+      "brand": "Pfizer",
+      "activeIngredient": "Alprazolam",
+      "dosage": "0.5mg",
+      "category": "Anxiolytic"
+    },
+    {
+      "id": "16",
+      "name": "Crestor",
+      "brand": "AstraZeneca",
+      "activeIngredient": "Rosuvastatin",
+      "dosage": "10mg",
+      "category": "Statin"
+    },
+    {
+      "id": "17",
+      "name": "Singulair",
+      "brand": "MSD",
+      "activeIngredient": "Montelukast",
+      "dosage": "10mg",
+      "category": "Antiasthmatic"
+    },
+    {
+      "id": "18",
+      "name": "Tylenol",
+      "brand": "J&J",
+      "activeIngredient": "Acetaminophen",
+      "dosage": "500mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": "19",
+      "name": "Valium",
+      "brand": "Roche",
+      "activeIngredient": "Diazepam",
+      "dosage": "5mg",
+      "category": "Anxiolytic"
+    },
+    {
+      "id": "20",
+      "name": "Plavix",
+      "brand": "Sanofi",
+      "activeIngredient": "Clopidogrel",
+      "dosage": "75mg",
+      "category": "Antiplatelet"
+    },
+    {
+      "id": "21",
+      "name": "Glucophage",
+      "brand": "Merck",
+      "activeIngredient": "Metformin",
+      "dosage": "500mg",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "22",
+      "name": "Zoloft",
+      "brand": "Pfizer",
+      "activeIngredient": "Sertraline",
+      "dosage": "50mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "23",
+      "name": "Prilosec",
+      "brand": "P&G",
+      "activeIngredient": "Omeprazole",
+      "dosage": "20mg",
+      "category": "Antacid"
+    },
+    {
+      "id": "24",
+      "name": "Motrin",
+      "brand": "McNeil",
+      "activeIngredient": "Ibuprofen",
+      "dosage": "600mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": "25",
+      "name": "Ciprofloxacin",
+      "brand": "Bayer",
+      "activeIngredient": "Ciprofloxacin",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "26",
+      "name": "Lisinopril",
+      "brand": "Generic",
+      "activeIngredient": "Lisinopril",
+      "dosage": "10mg",
+      "category": "Antihypertensive"
+    },
+    {
+      "id": "27",
+      "name": "Amlodipine",
+      "brand": "Generic",
+      "activeIngredient": "Amlodipine",
+      "dosage": "5mg",
+      "category": "Antihypertensive"
+    },
+    {
+      "id": "28",
+      "name": "Hydrochlorothiazide",
+      "brand": "Generic",
+      "activeIngredient": "HCTZ",
+      "dosage": "25mg",
+      "category": "Diuretic"
+    },
+    {
+      "id": "29",
+      "name": "Losartan",
+      "brand": "Merck",
+      "activeIngredient": "Losartan Potassium",
+      "dosage": "50mg",
+      "category": "Antihypertensive"
+    },
+    {
+      "id": "30",
+      "name": "Prednisone",
+      "brand": "Generic",
+      "activeIngredient": "Prednisone",
+      "dosage": "20mg",
+      "category": "Corticosteroid"
+    },
+    {
+      "id": "31",
+      "name": "Gabapentin",
+      "brand": "Pfizer",
+      "activeIngredient": "Gabapentin",
+      "dosage": "300mg",
+      "category": "Anticonvulsant"
+    },
+    {
+      "id": "32",
+      "name": "Amoxicillin",
+      "brand": "Generic",
+      "activeIngredient": "Amoxicillin",
+      "dosage": "250mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "33",
+      "name": "Levothyroxine",
+      "brand": "Generic",
+      "activeIngredient": "T4",
+      "dosage": "100mcg",
+      "category": "Hormone"
+    },
+    {
+      "id": "34",
+      "name": "Azithromycin",
+      "brand": "Generic",
+      "activeIngredient": "Azithromycin",
+      "dosage": "250mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "35",
+      "name": "Omeprazole",
+      "brand": "Generic",
+      "activeIngredient": "Omeprazole",
+      "dosage": "40mg",
+      "category": "Antacid"
+    },
+    {
+      "id": "36",
+      "name": "Sertraline",
+      "brand": "Generic",
+      "activeIngredient": "Sertraline",
+      "dosage": "100mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "37",
+      "name": "Flonase",
+      "brand": "GSK",
+      "activeIngredient": "Fluticasone",
+      "dosage": "50mcg",
+      "category": "Corticosteroid"
+    },
+    {
+      "id": "38",
+      "name": "Tramadol",
+      "brand": "Generic",
+      "activeIngredient": "Tramadol",
+      "dosage": "50mg",
+      "category": "Analgesic"
+    },
+    {
+      "id": "39",
+      "name": "Meloxicam",
+      "brand": "Boehringer",
+      "activeIngredient": "Meloxicam",
+      "dosage": "15mg",
+      "category": "Anti-inflammatory"
+    },
+    {
+      "id": "40",
+      "name": "Warfarin",
+      "brand": "BMS",
+      "activeIngredient": "Warfarin Sodium",
+      "dosage": "5mg",
+      "category": "Anticoagulant"
+    },
+    {
+      "id": "41",
+      "name": "Clopidogrel",
+      "brand": "Generic",
+      "activeIngredient": "Clopidogrel",
+      "dosage": "75mg",
+      "category": "Antiplatelet"
+    },
+    {
+      "id": "42",
+      "name": "Pantoprazole",
+      "brand": "Takeda",
+      "activeIngredient": "Pantoprazole",
+      "dosage": "40mg",
+      "category": "Antacid"
+    },
+    {
+      "id": "43",
+      "name": "Furosemide",
+      "brand": "Sanofi",
+      "activeIngredient": "Furosemide",
+      "dosage": "40mg",
+      "category": "Diuretic"
+    },
+    {
+      "id": "44",
+      "name": "Spironolactone",
+      "brand": "Pfizer",
+      "activeIngredient": "Spironolactone",
+      "dosage": "25mg",
+      "category": "Diuretic"
+    },
+    {
+      "id": "45",
+      "name": "Metoprolol",
+      "brand": "Generic",
+      "activeIngredient": "Metoprolol Tartrate",
+      "dosage": "50mg",
+      "category": "Beta-blocker"
+    },
+    {
+      "id": "46",
+      "name": "Carvedilol",
+      "brand": "Generic",
+      "activeIngredient": "Carvedilol",
+      "dosage": "6.25mg",
+      "category": "Beta-blocker"
+    },
+    {
+      "id": "47",
+      "name": "Fluoxetine",
+      "brand": "Lilly",
+      "activeIngredient": "Fluoxetine",
+      "dosage": "20mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "48",
+      "name": "Citalopram",
+      "brand": "Lundbeck",
+      "activeIngredient": "Citalopram",
+      "dosage": "20mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "49",
+      "name": "Trazodone",
+      "brand": "Generic",
+      "activeIngredient": "Trazodone",
+      "dosage": "50mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "50",
+      "name": "Duloxetine",
+      "brand": "Lilly",
+      "activeIngredient": "Duloxetine",
+      "dosage": "30mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "51",
+      "name": "Venlafaxine",
+      "brand": "Pfizer",
+      "activeIngredient": "Venlafaxine",
+      "dosage": "75mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "52",
+      "name": "Bupropion",
+      "brand": "GSK",
+      "activeIngredient": "Bupropion",
+      "dosage": "150mg",
+      "category": "Antidepressant"
+    },
+    {
+      "id": "53",
+      "name": "Lorazepam",
+      "brand": "Generic",
+      "activeIngredient": "Lorazepam",
+      "dosage": "1mg",
+      "category": "Anxiolytic"
+    },
+    {
+      "id": "54",
+      "name": "Clonazepam",
+      "brand": "Roche",
+      "activeIngredient": "Clonazepam",
+      "dosage": "2mg",
+      "category": "Anxiolytic"
+    },
+    {
+      "id": "55",
+      "name": "Ambien",
+      "brand": "Sanofi",
+      "activeIngredient": "Zolpidem",
+      "dosage": "10mg",
+      "category": "Hypnotic"
+    },
+    {
+      "id": "56",
+      "name": "Cyclobenzaprine",
+      "brand": "Generic",
+      "activeIngredient": "Cyclobenzaprine",
+      "dosage": "10mg",
+      "category": "Muscle Relaxant"
+    },
+    {
+      "id": "57",
+      "name": "Tizanidine",
+      "brand": "Generic",
+      "activeIngredient": "Tizanidine",
+      "dosage": "4mg",
+      "category": "Muscle Relaxant"
+    },
+    {
+      "id": "58",
+      "name": "Baclofen",
+      "brand": "Generic",
+      "activeIngredient": "Baclofen",
+      "dosage": "10mg",
+      "category": "Muscle Relaxant"
+    },
+    {
+      "id": "59",
+      "name": "Methocarbamol",
+      "brand": "Generic",
+      "activeIngredient": "Methocarbamol",
+      "dosage": "500mg",
+      "category": "Muscle Relaxant"
+    },
+    {
+      "id": "60",
+      "name": "Ondansetron",
+      "brand": "GSK",
+      "activeIngredient": "Ondansetron",
+      "dosage": "4mg",
+      "category": "Antiemetic"
+    },
+    {
+      "id": "61",
+      "name": "Meclizine",
+      "brand": "Generic",
+      "activeIngredient": "Meclizine",
+      "dosage": "25mg",
+      "category": "Antiemetic"
+    },
+    {
+      "id": "62",
+      "name": "Promethazine",
+      "brand": "Generic",
+      "activeIngredient": "Promethazine",
+      "dosage": "25mg",
+      "category": "Antiemetic"
+    },
+    {
+      "name": "Allopurinol",
+      "brand": "Generic",
+      "category": "Antigout",
+      "activeIngredient": "Allopunirol",
+      "dosage": "300mg",
+      "id": "63"
+    },
+    {
+      "id": "65",
+      "name": "Potassium Chloride",
+      "brand": "Generic",
+      "activeIngredient": "KCL",
+      "dosage": "20mEq",
+      "category": "Supplement"
+    },
+    {
+      "id": "66",
+      "name": "Vitamin D3",
+      "brand": "Generic",
+      "activeIngredient": "Cholecalciferol",
+      "dosage": "50000IU",
+      "category": "Supplement"
+    },
+    {
+      "id": "67",
+      "name": "Folic Acid",
+      "brand": "Generic",
+      "activeIngredient": "Folic Acid",
+      "dosage": "1mg",
+      "category": "Supplement"
+    },
+    {
+      "id": "68",
+      "name": "Alendronate",
+      "brand": "Merck",
+      "activeIngredient": "Alendronate",
+      "dosage": "70mg",
+      "category": "Osteoporosis"
+    },
+    {
+      "id": "69",
+      "name": "Sumatriptan",
+      "brand": "GSK",
+      "activeIngredient": "Sumatriptan",
+      "dosage": "50mg",
+      "category": "Antimigraine"
+    },
+    {
+      "id": "70",
+      "name": "Finasteride",
+      "brand": "Merck",
+      "activeIngredient": "Finasteride",
+      "dosage": "5mg",
+      "category": "Urological"
+    },
+    {
+      "id": "71",
+      "name": "Tamsulosin",
+      "brand": "Boehringer",
+      "activeIngredient": "Tamsulosin",
+      "dosage": "0.4mg",
+      "category": "Urological"
+    },
+    {
+      "id": "72",
+      "name": "Sildenafil",
+      "brand": "Pfizer",
+      "activeIngredient": "Sildenafil",
+      "dosage": "50mg",
+      "category": "Urological"
+    },
+    {
+      "id": "73",
+      "name": "Tadalafil",
+      "brand": "Lilly",
+      "activeIngredient": "Tadalafil",
+      "dosage": "20mg",
+      "category": "Urological"
+    },
+    {
+      "id": "74",
+      "name": "Clobetasol",
+      "brand": "Generic",
+      "activeIngredient": "Clobetasol Propionate",
+      "dosage": "0.05%",
+      "category": "Dermatological"
+    },
+    {
+      "id": "75",
+      "name": "Hydrocortisone",
+      "brand": "Generic",
+      "activeIngredient": "Hydrocortisone",
+      "dosage": "2.5%",
+      "category": "Dermatological"
+    },
+    {
+      "id": "76",
+      "name": "Mupirocin",
+      "brand": "GSK",
+      "activeIngredient": "Mupirocin",
+      "dosage": "2%",
+      "category": "Dermatological"
+    },
+    {
+      "id": "77",
+      "name": "Ketoconazole",
+      "brand": "Generic",
+      "activeIngredient": "Ketoconazole",
+      "dosage": "2%",
+      "category": "Antifungal"
+    },
+    {
+      "id": "78",
+      "name": "Fluconazole",
+      "brand": "Pfizer",
+      "activeIngredient": "Fluconazole",
+      "dosage": "150mg",
+      "category": "Antifungal"
+    },
+    {
+      "id": "79",
+      "name": "Nystatin",
+      "brand": "Generic",
+      "activeIngredient": "Nystatin",
+      "dosage": "100000IU",
+      "category": "Antifungal"
+    },
+    {
+      "id": "80",
+      "name": "Terbinafine",
+      "brand": "Novartis",
+      "activeIngredient": "Terbinafine",
+      "dosage": "250mg",
+      "category": "Antifungal"
+    },
+    {
+      "id": "81",
+      "name": "Acyclovir",
+      "brand": "Generic",
+      "activeIngredient": "Acyclovir",
+      "dosage": "400mg",
+      "category": "Antiviral"
+    },
+    {
+      "id": "82",
+      "name": "Valacyclovir",
+      "brand": "GSK",
+      "activeIngredient": "Valacyclovir",
+      "dosage": "500mg",
+      "category": "Antiviral"
+    },
+    {
+      "id": "83",
+      "name": "Tamiflu",
+      "brand": "Roche",
+      "activeIngredient": "Oseltamivir",
+      "dosage": "75mg",
+      "category": "Antiviral"
+    },
+    {
+      "id": "84",
+      "name": "Doxycycline",
+      "brand": "Generic",
+      "activeIngredient": "Doxycycline",
+      "dosage": "100mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "85",
+      "name": "Cephalexin",
+      "brand": "Generic",
+      "activeIngredient": "Cephalexin",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "86",
+      "name": "Minocycline",
+      "brand": "Generic",
+      "activeIngredient": "Minocycline",
+      "dosage": "100mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "87",
+      "name": "Clindamycin",
+      "brand": "Pfizer",
+      "activeIngredient": "Clindamycin",
+      "dosage": "300mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "88",
+      "name": "Nitrofurantoin",
+      "brand": "Generic",
+      "activeIngredient": "Nitrofurantoin",
+      "dosage": "100mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "89",
+      "name": "Metronidazole",
+      "brand": "Generic",
+      "activeIngredient": "Metronidazole",
+      "dosage": "500mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "90",
+      "name": "Bactrim",
+      "brand": "Roche",
+      "activeIngredient": "Sulfamethoxazole/Trimethoprim",
+      "dosage": "800/160mg",
+      "category": "Antibiotic"
+    },
+    {
+      "id": "91",
+      "name": "Lisinopril/HCTZ",
+      "brand": "Generic",
+      "activeIngredient": "Lisinopril/HCTZ",
+      "dosage": "20/12.5mg",
+      "category": "Antihypertensive"
+    },
+    {
+      "id": "92",
+      "name": "Losartan/HCTZ",
+      "brand": "Generic",
+      "activeIngredient": "Losartan/HCTZ",
+      "dosage": "50/12.5mg",
+      "category": "Antihypertensive"
+    },
+    {
+      "id": "93",
+      "name": "Januvia",
+      "brand": "MSD",
+      "activeIngredient": "Sitagliptin",
+      "dosage": "100mg",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "94",
+      "name": "Jardiance",
+      "brand": "Boehringer",
+      "activeIngredient": "Empagliflozin",
+      "dosage": "25mg",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "95",
+      "name": "Victoza",
+      "brand": "Novo Nordisk",
+      "activeIngredient": "Liraglutide",
+      "dosage": "1.8mg",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "96",
+      "name": "Humalog",
+      "brand": "Lilly",
+      "activeIngredient": "Insulin Lispro",
+      "dosage": "100U/ml",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "97",
+      "name": "Lantus",
+      "brand": "Sanofi",
+      "activeIngredient": "Insulin Glargine",
+      "dosage": "100U/ml",
+      "category": "Antidiabetic"
+    },
+    {
+      "id": "98",
+      "name": "Advair",
+      "brand": "GSK",
+      "activeIngredient": "Fluticasone/Salmeterol",
+      "dosage": "250/50mcg",
+      "category": "Bronchodilator"
+    },
+    {
+      "id": "99",
+      "name": "Symbicort",
+      "brand": "AstraZeneca",
+      "activeIngredient": "Budesonide/Formoterol",
+      "dosage": "160/4.5mcg",
+      "category": "Bronchodilator"
+    },
+    {
+      "id": "100",
+      "name": "Spiriva",
+      "brand": "Boehringer",
+      "activeIngredient": "Tiotropium",
+      "dosage": "18mcg",
+      "category": "Bronchodilator"
+    },
+    {
+      "id": "64",
+      "name": "New",
+      "brand": "New",
+      "category": "Analgesic",
+      "activeIngredient": "New",
+      "dosage": "1gr"
+    }
+  ],
+  "inventory": [
+    {
+      "batchNumber": "BAT-AMX-001",
+      "stock": "150",
+      "expiryDate": "2026-05-20",
+      "id": "1",
+      "medicationId": 1
+    },
+    {
+      "id": "2",
+      "medicationId": 2,
+      "batchNumber": "BAT-VAR-992",
+      "expiryDate": "2024-12-15",
+      "stock": 45
+    },
+    {
+      "id": "3",
+      "medicationId": 3,
+      "batchNumber": "BAT-ADV-441",
+      "expiryDate": "2025-08-10",
+      "stock": 12
+    },
+    {
+      "id": "4",
+      "medicationId": 4,
+      "batchNumber": "BAT-NOL-005",
+      "expiryDate": "2027-01-30",
+      "stock": 200
+    },
+    {
+      "id": "5",
+      "medicationId": 5,
+      "batchNumber": "BAT-ZIT-112",
+      "expiryDate": "2026-11-11",
+      "stock": 80
+    },
+    {
+      "id": "6",
+      "medicationId": 10,
+      "batchNumber": "BAT-LIP-223",
+      "expiryDate": "2025-03-22",
+      "stock": 300
+    },
+    {
+      "id": "7",
+      "medicationId": 12,
+      "batchNumber": "BAT-VEN-778",
+      "expiryDate": "2026-09-05",
+      "stock": 15
+    },
+    {
+      "id": "8",
+      "medicationId": 13,
+      "batchNumber": "BAT-MET-445",
+      "expiryDate": "2025-07-20",
+      "stock": 500
+    },
+    {
+      "id": "9",
+      "medicationId": 20,
+      "batchNumber": "BAT-PLA-889",
+      "expiryDate": "2024-11-30",
+      "stock": 25
+    },
+    {
+      "id": "10",
+      "medicationId": 33,
+      "batchNumber": "BAT-LEV-001",
+      "expiryDate": "2028-10-10",
+      "stock": 1000
+    }
+  ]
+}

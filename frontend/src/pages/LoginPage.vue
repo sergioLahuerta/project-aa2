@@ -1,45 +1,123 @@
 <template>
-  <v-card width="450" class="pa-8 mx-auto" elevation="4">
-    <v-card-title class="text-h5 text-center mb-6">
-      {{ isLogin ? 'PharmaLogic Admin Access' : 'Create Account' }}
-    </v-card-title>
-    
-    <v-form @submit.prevent="onSubmit">
-      <v-text-field
-        v-if="!isLogin"
-        v-model="name"
-        label="Full Name"
-        variant="outlined"
-        class="mb-2"
-      ></v-text-field>
+  <v-container fluid class="fill-height" style="background: linear-gradient(180deg, #001f3d 0%, #000000 100%);">
+    <v-row align="center" justify="center">
+      <v-col cols="12" sm="8" md="4" lg="3">
+        
+        <v-card 
+          class="pa-8 elevation-12" 
+          rounded="xl" 
+          theme="dark" 
+          color="rgba(15, 23, 42, 0.8)" 
+          style="backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);"
+        >
+          <div class="text-center mb-8">
+            <v-avatar color="black" size="80" class="elevation-4">
+                <v-img src="@/assets/logo.svg" alt="PharmaLogic Logo" contain></v-img>
+              </v-avatar>
+            
+            <v-card-title class="text-h4 font-weight-bold pa-0 mb-1">
+              PharmaLogic
+            </v-card-title>
+            <p class="text-body-2 text-grey-lighten-1">
+              {{ isLogin ? 'Acceso al Panel de Administración' : 'Registro de nuevo gestor' }}
+            </p>
+          </div>
 
-      <v-text-field v-model="email" label="Email" variant="outlined" :error-messages="errors.email"></v-text-field>
-      <v-text-field v-model="password" label="Password" type="password" variant="outlined" :error-messages="errors.password"></v-text-field>
+          <v-form @submit.prevent="onSubmit">
+            <v-expand-transition>
+              <v-text-field v-if="!isLogin" v-model="name"
+                label="Nombre Completo"
+                variant="outlined"
+                prepend-inner-icon="mdi-account-outline"
+                color="primary"
+                class="mb-2"
+                density="comfortable"
+              ></v-text-field>
+            </v-expand-transition>
 
-      <v-btn color="primary" block size="large" type="submit" class="mt-4">
-        {{ isLogin ? 'Login' : 'Sign Up' }}
-      </v-btn>
+            <v-text-field v-model="email"
+              label="Correo Electrónico"
+              variant="outlined"
+              prepend-inner-icon="mdi-email-outline"
+              :error-messages="errors.email"
+              color="primary"
+              class="mb-2"
+              placeholder="admin@pharmalogic.com"
+              density="comfortable"
+            ></v-text-field>
 
-      <v-btn variant="text" block class="mt-2" @click="isLogin = !isLogin">
-        {{ isLogin ? "Don't have an account? Register" : "Already have an account? Login" }}
-      </v-btn>
-    </v-form>
-  </v-card>
+            <v-text-field v-model="password"
+              label="Contraseña"
+              type="password"
+              variant="outlined"
+              prepend-inner-icon="mdi-lock-outline"
+              :error-messages="errors.password"
+              color="primary"
+              class="mb-2"
+              density="comfortable"
+            ></v-text-field>
+
+            <v-btn
+              color="primary"
+              block
+              size="x-large"
+              type="submit"
+              class="mt-6 font-weight-bold text-none"
+              elevation="2"
+              :loading="isSubmitting"
+            >
+              {{ isLogin ? 'Iniciar Sesión' : 'Crear Cuenta' }}
+            </v-btn>
+
+            <div class="d-flex align-center my-6">
+              <v-divider></v-divider>
+              <span class="mx-4 text-caption text-grey">O</span>
+              <v-divider></v-divider>
+            </div>
+
+            <v-btn
+              variant="text"
+              block
+              color="secondary"
+              class="text-none"
+              @click="isLogin = !isLogin"
+            >
+              {{ isLogin ? "¿No tienes cuenta? Regístrate" : "¿Ya tienes cuenta? Inicia sesión" }}
+            </v-btn>
+          </v-form>
+
+          <v-alert
+            v-if="isLogin"
+            type="info"
+            variant="tonal"
+            density="compact"
+            class="mt-6 text-caption"
+            icon="mdi-information-outline"
+          >
+            Use <strong>admin@test.com</strong> / <strong>123456</strong>
+          </v-alert>
+        </v-card>
+
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { useForm, useField } from 'vee-validate';
 import * as yup from 'yup';
-import { useRouter } from 'vue-router';
-import { ref } from 'vue';
+import { useAuthStore } from '@/stores/authStore'; 
+
 const isLogin = ref(true);
 const name = ref('');
-
 const router = useRouter();
+const authStore = useAuthStore();
 
 const schema = yup.object({
-  email: yup.string().email('Invalid email format').required('Email is required'),
-  password: yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+  email: yup.string().email('Formato de email inválido').required('El email es obligatorio'),
+  password: yup.string().min(6, 'Mínimo 6 caracteres').required('La contraseña es obligatoria'),
 });
 
 const { handleSubmit, errors, isSubmitting } = useForm({
@@ -49,9 +127,12 @@ const { handleSubmit, errors, isSubmitting } = useForm({
 const { value: email } = useField<string>('email');
 const { value: password } = useField<string>('password');
 
-const onSubmit = handleSubmit(values => {
-  console.log('Credenciales intentadas:', values);
+const onSubmit = handleSubmit(async (values) => {
+  await new Promise(resolve => setTimeout(resolve, 800));
   
-  router.push('/dashboard');
+  const tokenSimulado = 'fake-jwt-token-123';
+  authStore.login(tokenSimulado); 
+  
+  router.push('/admin/medication');
 });
 </script>
