@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IlMGSMWDubpomSpV8gob4QQOKCj0euhPUzU6iU/F93k=",
+  "Source": "PharmaLogic.Api",
+  "BasePath": "_content/PharmaLogic.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
