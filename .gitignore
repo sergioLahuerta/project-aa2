@@ -30,3 +30,9 @@ yarn-error.log*
 # Archivos de sistema
 .DS_Store
 Thumbs.db
+
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.sln.doccache
