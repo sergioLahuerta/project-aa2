@@ -24,9 +24,6 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# Docker
-.docker/
-
 # Archivos de sistema
 .DS_Store
 Thumbs.db
