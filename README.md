@@ -1,6 +1,6 @@
 # PharmaLogic - External Medical API System
 
-docker-compose build
+docker-compose build  
 docker-compose up -d
 
 # User Admin Credentials
