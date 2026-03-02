@@ -4,5 +4,5 @@ docker-compose build
 docker-compose up -d
 
 # User Admin Credentials
-e-mail: admin@test.com
+e-mail: admin@test.com  
 pass: 123456
