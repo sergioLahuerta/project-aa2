@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./backend/PharmaLogic.Api
+    ports:
+      - "5126:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
