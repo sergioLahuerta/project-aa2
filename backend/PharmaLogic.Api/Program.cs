@@ -48,11 +48,11 @@ builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("VueAppPolicy", policy =>
-    {
-        policy.WithOrigins("http://localhost:5173")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+{
+    policy.WithOrigins("http://localhost:3000")
+          .AllowAnyHeader()
+          .AllowAnyMethod();
+});
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

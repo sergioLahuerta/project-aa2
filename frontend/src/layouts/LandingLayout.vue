@@ -1,5 +1,5 @@
 <template>
-  <v-app theme="dark" style="background-color: #0f1114;">
+  <v-app :theme="authStore.isDark ? 'dark' : 'light'">
     <v-app-bar flat color="transparent" class="px-md-16 pt-4">
       <div class="d-flex align-center">
         <v-avatar color="black" size="50" class="mr-4 elevation-4">
@@ -11,6 +11,10 @@
       <v-spacer></v-spacer>
 
       <div class="d-none d-sm-flex align-center">
+        <v-btn icon @click="changeTheme" class="mr-2">
+          <v-icon>{{ authStore.isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+        </v-btn>
+
         <v-menu transition="slide-y-transition">
           <template v-slot:activator="{ props }">
             <v-btn
@@ -88,39 +92,29 @@
 import { useAuthStore } from '@/stores/authStore';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import { useTheme } from 'vuetify';
+import { onMounted } from 'vue';
 
 const authStore = useAuthStore();
 const router = useRouter();
-const { locale } = useI18n(); // Usamos el hook de i18n para controlar el idioma
+const { locale } = useI18n();
+const theme = useTheme();
 
-/**
- * Cambia el idioma global de la aplicación y lo persiste
- */
+const changeTheme = () => {
+  authStore.toggleTheme(theme);
+};
+
 const setLanguage = (lang: 'es' | 'en') => {
   locale.value = lang;
   localStorage.setItem('user-locale', lang);
 };
 
-/**
- * Cierra la sesión y redirige al inicio
- */
 const logout = () => {
   authStore.logout();
   router.push('/');
 };
+
+onMounted(() => {
+  theme.global.name.value = authStore.isDark ? 'dark' : 'light';
+});
 </script>
-
-<style scoped>
-/* Ajustes de espaciado para que el layout sea responsive */
-@media (max-width: 600px) {
-  .v-app-bar {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-}
-
-/* Transición suave para el fondo */
-.v-application {
-  transition: background-color 0.3s ease;
-}
-</style>
